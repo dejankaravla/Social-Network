@@ -65,11 +65,11 @@ export class FriendsPage extends Component {
       }
     });
 
-    let suggestedFriendsData = data.filter((item, i) => {
+    let suggestedFriendsData = data.filter((item) => {
       if (this.state.friends.length < 2 || item.friends.length < 2) {
         return null;
       } else {
-        const mapp = this.state.friends.map((element, i) => item.friends.includes(element));
+        const mapp = this.state.friends.map((element) => item.friends.includes(element));
         const mapps = mapp.filter(Boolean);
         if (mapps.length < 2) {
           return null;
