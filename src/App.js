@@ -9,12 +9,11 @@ import classes from "./App.module.css";
 
 class App extends Component {
   state = {
-    showFriends: false,
     personData: null,
   };
 
   showFriendsHandler = (personData) => {
-    this.setState({ personData: personData, showFriends: true });
+    this.setState({ personData: personData });
   };
 
   componentDidUpdate() {
