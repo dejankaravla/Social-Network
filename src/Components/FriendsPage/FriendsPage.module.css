@@ -1,0 +1,102 @@
+.FriendsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.FriendsPage h2 {
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.SelectedPerson {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.Person {
+  font-size: 20px;
+}
+
+.PersonData {
+  display: inline-block;
+  text-align: justify;
+}
+
+.ImgContainer img {
+  width: 50%;
+}
+
+.AllFriends {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.FriendsImgContainer img {
+  width: 20%;
+}
+
+.FriendsContainer {
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+  padding-bottom: 40px;
+}
+
+.Friends {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 20px;
+}
+
+.FriendsMutual,
+.FriendsSuggested {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.FriendsPerson {
+  background: #eee;
+  padding: 20px;
+  border: 1px black solid;
+  border-radius: 5px;
+  color: #333;
+  text-align: justify;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+.FriendsPerson:hover {
+  transform: translateY(-5px);
+  background: #82a2ff;
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .FriendsContainer {
+    width: 100%;
+  }
+
+  .FriendsMutual,
+  .FriendsSuggested,
+  .Friends {
+    display: flex;
+    flex-direction: column;
+  }
+}

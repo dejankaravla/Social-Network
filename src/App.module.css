@@ -1,0 +1,108 @@
+span {
+  font-weight: bold;
+}
+
+.LinkContainer {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.LinkToFriends {
+  background: #ff6584;
+  color: white;
+  border: 1px #555 solid;
+  padding: 7px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.LinkToFriends:hover {
+  background: #00d7d4;
+}
+
+.App {
+  text-align: center;
+  background: #82a2ff;
+  padding: 50px 100px;
+  font-family: "Roboto", sans-serif;
+  color: black;
+}
+
+.App h1 {
+  padding-bottom: 30px;
+  color: #fff;
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+}
+
+.App h2 {
+  font-size: 30px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.PersonsHeadlineContainer {
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+}
+
+.AllPersonsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.Person {
+  background: #eee;
+  padding: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+.Person:hover {
+  transform: translateY(-5px);
+  background: #82a2ff;
+  color: #ffffff;
+}
+
+.PersonData {
+  width: 55%;
+  margin: auto;
+  text-align: justify;
+}
+
+.ImgContainer img {
+  width: 40%;
+  border-radius: 100px;
+}
+
+@media (max-width: 900px) {
+  .App {
+    padding: 20px;
+  }
+
+  .App h2 {
+    margin: 0;
+    padding: 30px;
+  }
+
+  .PersonsHeadlineContainer {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  .AllPersonsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Person {
+    width: 80%;
+    margin: auto;
+  }
+}

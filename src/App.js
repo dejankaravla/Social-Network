@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import FriendsPage from "./Components/FriendsPage/FriendsPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import data from "./data.json";
+import PersonImg from "./assets/17004.png";
+
+import classes from "./App.module.css";
+
+class App extends Component {
+  state = {
+    showFriends: false,
+    personData: null,
+  };
+
+  showFriendsHandler = (personData) => {
+    this.setState({ personData: personData, showFriends: true });
+  };
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    const friendsData = data.map((data) => {
+      return (
+        <div key={Math.random()} className={classes.Person}>
+          <div className={classes.ImgContainer}>
+            <img src={PersonImg} alt="some img" />
+          </div>
+          <div className={classes.PersonData}>
+            <p>
+              <span>Name: </span> {data.firstName} {data.surname}
+            </p>
+            <p>
+              <span>Age: </span>
+              {data.age ? data.age : "-"}
+            </p>
+            <p>
+              <span>Gender: </span> {data.gender}
+            </p>
+          </div>
+          <div className={classes.LinkContainer}>
+            <Link className={classes.LinkToFriends} to="/Friends" onClick={() => this.showFriendsHandler(data)}>
+              Show Friends
+            </Link>
+          </div>
+        </div>
+      );
+    });
+
+    return (
+      <div className={classes.App}>
+        <BrowserRouter>
+          <h1>Social Network App</h1>
+          <Route path="/Friends" render={() => <FriendsPage personData={this.state.personData} />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div className={classes.PersonsHeadlineContainer}>
+                <h2>Social Network Users</h2>
+                <div className={classes.AllPersonsContainer}>{friendsData}</div>
+              </div>
+            )}
+          />
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
