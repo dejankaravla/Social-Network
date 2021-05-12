@@ -1,3 +1,12 @@
+# About Social Network App
+
+This is the social network app from admins perspective. In this app you can see all the users and their data. You can also select user and browse his friends and also see his friends of friends. I also made suggested friends section where you can see people who are not friends with the selected user but they have two or more friends in common.
+
+# About Developing
+
+I used only React.js for developing this app. I found this project interesting and learned a lot about development this type of app. Also I plan to develop this app furthermore. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
